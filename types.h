@@ -48,6 +48,15 @@ void __mem_copy(void* d, const void* s, UInt32 sz);
 #include <sys/endian.h>
 #endif /* defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) */
 
+#if defined(__OpenBSD__)
+#ifndef LITTLE_ENDIAN
+#define	LITTLE_ENDIAN	_LITTLE_ENDIAN
+#endif /* LITTLE_ENDIAN */
+#ifndef BIG_ENDIAN
+#define	BIG_ENDIAN	_BIG_ENDIAN
+#endif /* BIG_ENDIAN */
+#endif /* defined(__OpenBSD__) */
+
 #ifndef LITTLE_ENDIAN
 #define	LITTLE_ENDIAN	(0xAABBCCDDUL)
 #endif /* LITTLE_ENDIAN */
