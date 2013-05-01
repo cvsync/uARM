@@ -1,6 +1,7 @@
 #ifndef _TYPES_H_
 #define _TYPES_H_
 
+#include <sys/types.h>
 #include <stdint.h>
 
 typedef uint32_t UInt32;
@@ -47,15 +48,6 @@ void __mem_copy(void* d, const void* s, UInt32 sz);
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <sys/endian.h>
 #endif /* defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) */
-
-#if defined(__OpenBSD__)
-#ifndef LITTLE_ENDIAN
-#define	LITTLE_ENDIAN	_LITTLE_ENDIAN
-#endif /* LITTLE_ENDIAN */
-#ifndef BIG_ENDIAN
-#define	BIG_ENDIAN	_BIG_ENDIAN
-#endif /* BIG_ENDIAN */
-#endif /* defined(__OpenBSD__) */
 
 #ifndef LITTLE_ENDIAN
 #define	LITTLE_ENDIAN	(0xAABBCCDDUL)
